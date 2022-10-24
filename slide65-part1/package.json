@@ -1,0 +1,19 @@
+{
+  "name": "slide65",
+  "version": "1.0.0",
+  "description": "Exercise 6 (Calculator with Swagger)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Bally Lomibao",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "swagger-ui-express": "^4.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

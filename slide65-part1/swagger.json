@@ -1,0 +1,128 @@
+{
+"swagger": "2.0",
+"info": {
+    "version": "1.0.0",
+    "title": "Slide 65: PART 2",
+    "description": "Slide 65: PART 2/Exercise 6(Calculator with SWAGGER)",
+    "license":  {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+    }
+},
+"host": "localhost:3000",
+"basePath": "/",
+"tags": [
+    {
+        "name": "Calculator",
+        "description": "API for Calculus in the system"
+    }
+],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+       "/calculator/add": {
+        "get": {
+            "tags": [
+                "Addition Service"
+            ],
+            "summary": "Add TWO numbers",
+            "parameters": [
+                {
+                    "name": "num1",
+                    "in": "query",
+                "description": "the First Number"
+                },
+                {
+                    "name": "num2",
+                    "in": "query",
+                "description": "the Second Number"
+                }
+            ],
+            "responses": {
+                "200": {
+                        "description": "This service allows you to ADD TWO numbers together."
+                    }
+                }
+            }
+        },
+
+         "/calculator/substract": {
+        "get": {
+            "tags": [
+                "Substraction Service"
+            ],
+            "summary": "Substract TWO numbers",
+            "parameters": [
+                {
+                    "name": "num1",
+                    "in": "query",
+                "description": "the First Number"
+                },
+                {
+                    "name": "num2",
+                    "in": "query",
+                "description": "the Second Number"
+                }
+            ],
+            "responses": {
+                "200": {
+                        "description": "This service allows you to SUBSTRACT ONE number to another."
+                    }
+                }
+            }
+        },
+
+         "/calculator/multiply": {
+        "get": {
+            "tags": [
+                "Multiplication Service"
+            ],
+            "summary": "Multiply TWO numbers",
+            "parameters": [
+                {
+                    "name": "num1",
+                    "in": "query",
+                "description": "the First Number"
+                },
+                {
+                    "name": "num2",
+                    "in": "query",
+                "description": "the Second Number"
+                }
+            ],
+            "responses": {
+                "200": {
+                        "description": "This service allows you to MULTIPLY TWO Numbers."
+                    }
+                }
+            }
+        },
+
+         "/calculator/divide": {
+        "get": {
+            "tags": [
+                "Division Service"
+            ],
+            "summary": "Divide TWO numbers",
+            "parameters": [
+                {
+                    "name": "num1",
+                    "in": "query",
+                "description": "the First Number"
+                },
+                {
+                    "name": "num2",
+                    "in": "query",
+                "description": "the Second Number"
+                }
+            ],
+            "responses": {
+                "200": {
+                        "description": "This service allows you to DIVIDE TWO Numbers."
+                    }
+                }
+            }
+        }
+    }
+}

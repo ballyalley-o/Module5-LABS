@@ -1,0 +1,22 @@
+{
+  "name": "slide54",
+  "version": "1.0.0",
+  "description": "Exercise 5 (Calculator with library & logging)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Bally Lomibao",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.18.2",
+    "generate-unique-id": "^2.0.1",
+    "moment": "^2.29.4",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
