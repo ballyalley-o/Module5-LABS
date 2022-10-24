@@ -1,11 +1,12 @@
-const BeersRoute = require("./BeersRoute");
-const BeersController = require("./BeersController");
+//const BeersRoute = require("./BeersRoute");
+//const BeersController = require("./BeersController");
+const calculatorRoute = require('./routes/calcRoute')
 const express = require("express");
 
 const app = express();
 const PORT = 3000;
 
-app.use("/", express.static("public"));
+app.use("/", express.static("public")); //this means that static HTML/CSS/JS files in the public folder will be served from the root endpoint, so index.html should go in there
 
 app.use("/calculator", calculatorRoute);
 

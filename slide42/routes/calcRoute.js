@@ -1,6 +1,6 @@
 const express = require('express');
 
-const calculatorController = require ('./calcController');
+const calculatorController = require ('../controllers/calcController');
 
 const router = express.Router();
 

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    body {
+        margin: 0;
+        padding: 100px;
+        font-family: Arial;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+    </style>
+
+<title>Slide 42</title> </head>
+
+<body>
+    <div class="container">
+        <h1>Slide 42</h1>
+            <p>Exercise 3 (Calculator app with routes/controllers)</p>
+            <br/>
+
+            First Number: <input id="firstNumber" type="text"/>
+            Second Number: <input id="secondNumber" type="text"/>
+        
+            <button onclick="fetchResult('add')">+</button>
+            <button onclick="fetchResult('substract')">-</button>
+            <button onclick="fetchResult('divide')">/</button>
+            <button onclick="fetchResult('multiply')">*</button>
+
+                <div>Result:
+                <span id="result"></span>
+            </div>
+    </div>
+
+
+</body>
+    <script>
+ 
+            function fetchResult(operation)
+            {
+                let num1=document.getElementById('firstNumber').value;
+                let num2=document.getElementById('secondNumber').value;
+            
+                fetch(`http://localhost:3000/calculator/${operation}?num1=${num1}&num2=${num2}`)
+                    .then(response => response.json())
+                    .then(data => { console.log(data)
+                    document.getElementById("result").innerHTML = data.result;
+                    })
+            }
+
+        //     fetch(`http://localhost:3000/calculator/substract?num1=${num1}&num2=${num2}`)
+        // .then(response => response.json())
+        // .then(data => { console.log(data)
+        // document.getElementById("result").innerHTML = `${data.result}`;
+        // })
+
+        //     fetch(`http://localhost:3000/calculator/multiply?num1=${num1}&num2=${num2}`)
+        // .then(response => response.json())
+        // .then(data => { console.log(data)
+        // document.getElementById("result").innerHTML = `${data.result}`;
+        // })
+
+        //     fetch(`http://localhost:3000/calculator/divide?num1=${num1}&num2=${num2}`)
+        // .then(response => response.json())
+        // .then(data => { console.log(data)
+        // document.getElementById("result").innerHTML = `${data.result}`;
+        // })
+
+
+
+    </script>
+</html>
