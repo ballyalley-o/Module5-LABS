@@ -1,5 +1,5 @@
-const moment = require("moment");
-const colors = require("colors");
+//const moment = require("moment");
+//const colors = require("colors");
 const generateUniqueId = require("generate-unique-id");
 
 
@@ -10,31 +10,31 @@ class Calculator {
     });;
   }
   #log = (value) => {
-    console.log(`[Calculator]:${this.id}:[${value}]`.yellow);
+    console.log(`[Calculator]:${this.id}:[${value}]`);
   };
 
   add(num1, num2) {
     const value = num1 + num2;
     this.#log(value);
-    value;
+    return value;
   }
 
   substract(num1, num2) {
     const value = num1 - num2;
     this.#log(value);
-    value;
+    return value;
   }
 
   multiply(num1, num2) {
     const value = num1 * num2;
     this.#log(value);
-    value;
+    return value;
   }
 
   divide(num1, num2) {
     const value = num1 / num2;
     this.#log(value);
-    value;
+    return value;
   }
 }
 

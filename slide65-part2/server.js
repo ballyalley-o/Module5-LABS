@@ -1,5 +1,5 @@
 const express = require("express");
-const BeersRoute = require("./BeersRoute");
+const BeersRoute = require("./routes/BeersRoute");
 const swaggerUi = require("swagger-ui-express");
 swaggerDocument = require("./swagger.json");
 require("dotenv").config();
@@ -14,31 +14,15 @@ app.listen(process.env.PORT, () => {
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+//all public-facing HTML/CSS/JS/IMG files go in the public directory
+
 app.use("/", express.static("public"));
 
+//the routes specify which endpoints are available in this backend service, and those will match your URLs in your public-facing JS
 
-app.get("/home", async (req, res) => {
-    const URL_RANDOM = "https://api.punkapi.com/v2/beers/random";
-    const fetch_res = await fetch(URL_RANDOM);
-    const data = await fetch_res.json();
-    res.json()
+app.use("/beers", BeersRoute);
 
-});
-
-app.get("/history", async (req, res) => {
-  const URL_PAGE1 = "https://api.punkapi.com/v2/beers?page=1&per_page=80";
-  const fetch_res = await fetch(URL_PAGE1);
-  const data = await fetch_res.json();
-  res.json();
-});
-
-
-app.get("/foodmatch", async (req, res) => {
-  const URL_PAGE2 = "https://api.punkapi.com/v2/beers?page=2&per_page=80";
-  const fetch_res = await fetch(URL_PAGE2);
-  const data = await fetch_res.json();
-  res.json();
-});
+//then your controller (called from the routes) does the logic of actually calling the external API
 
 
 app.get("/test", (req, res) => {

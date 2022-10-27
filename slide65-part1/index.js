@@ -10,6 +10,7 @@ const port = 3000;
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+//you don't have a public directory, but ideally you directory structure should follow the same structure as the previous slide54 one
 app.use("/", express.static("public"));
 
 app.use("/calculator", calculatorRoute);
